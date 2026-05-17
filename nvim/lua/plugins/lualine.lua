@@ -1,7 +1,7 @@
 return {
 	"nvim-lualine/lualine.nvim",
 
-	dependencies = {
+	Dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
 
@@ -24,7 +24,20 @@ return {
 						path = 3,
 					},
 				},
-				lualine_x = { "filetype" },
+
+				lualine_x = {
+					-- notifications like recording@x are shown on lualine
+					{
+						require("noice").api.statusline.mode.get,
+						cond = require("noice").api.statusline.mode.has,
+
+						color = "DiagnosticWarn",
+
+						padding = { left = 1, right = 1 },
+					},
+					"filetype",
+				},
+
 				lualine_y = {},
 				lualine_z = { "location" },
 			},

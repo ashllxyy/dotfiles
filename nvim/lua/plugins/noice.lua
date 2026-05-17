@@ -1,15 +1,15 @@
 return {
-  "folke/noice.nvim",
-  event = "VeryLazy",
+	"folke/noice.nvim",
+	event = "VeryLazy",
 
-  dependencies = {
-    "MunifTanjim/nui.nvim",
-  },
+	dependencies = {
+		"MunifTanjim/nui.nvim",
+	},
 
-  opts = {
-    presets = {
-      bottom_search = false,
-      command_palette = true,
-    },
-  },
+	opts = {
+		presets = {
+			bottom_search = false,
+			command_palette = true,
+		},
+	},
 }
