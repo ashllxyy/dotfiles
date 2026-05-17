@@ -16,22 +16,22 @@ config.keys = {
 	{
 		key = "h",
 		mods = "ctrl",
-		action = act.ActivatePaneDirection("left"),
+		action = act.ActivatePaneDirection("Left"),
 	},
 	{
 		key = "j",
 		mods = "ctrl",
-		action = act.ActivatePaneDirection("down"),
+		action = act.ActivatePaneDirection("Down"),
 	},
 	{
 		key = "k",
 		mods = "ctrl",
-		action = act.ActivatePaneDirection("up"),
+		action = act.ActivatePaneDirection("Up"),
 	},
 	{
 		key = "l",
 		mods = "ctrl",
-		action = act.ActivatePaneDirection("right"),
+		action = act.ActivatePaneDirection("Right"),
 	},
 
 	-- Split left/right

@@ -16,9 +16,9 @@ vim.keymap.set("v", ">", ">gv")
 -- Move lines/blocks up and down with Alt + j/k
 
 -- Normal mode
-vim.keymap.set("n", "<A-j>", "<Cmd>m .+1<CR>==")
-vim.keymap.set("n", "<A-k>", "<Cmd>m .-2<CR>==")
+vim.keymap.set("n", "<a-j>", "<cmd>m .+1<cr>==")
+vim.keymap.set("n", "<a-k>", "<cmd>m .-2<cr>==")
 
--- Visual mode (preserves selection + indentation)
-vim.keymap.set("v", "<A-j>", "<Cmd>m '>+1<CR>gv=gv")
-vim.keymap.set("v", "<A-k>", "<Cmd>m '<-2<CR>gv=gv")
+-- move selected block in visual mode
+vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", { silent = true })
+vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", { silent = true })
