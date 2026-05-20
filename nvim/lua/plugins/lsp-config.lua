@@ -12,10 +12,12 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
+					"clangd",
 				},
 			})
 
 			vim.lsp.enable("lua_ls")
+			vim.lsp.enable("clangd")
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function(ev)
