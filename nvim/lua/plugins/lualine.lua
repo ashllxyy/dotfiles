@@ -32,8 +32,6 @@ return {
 						cond = require("noice").api.statusline.mode.has,
 
 						color = "DiagnosticWarn",
-
-						padding = { left = 1, right = 1 },
 					},
 					"filetype",
 				},
