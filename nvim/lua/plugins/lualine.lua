@@ -19,21 +19,22 @@ return {
 				lualine_b = { "branch", "diff", "diagnostics" },
 
 				lualine_c = {
-					{
-						"filename",
-						path = 3,
-					},
+					"filename",
 				},
 
 				lualine_x = {
-					-- notifications like recording@x are shown on lualine
 					{
 						require("noice").api.statusline.mode.get,
 						cond = require("noice").api.statusline.mode.has,
-
 						color = "DiagnosticWarn",
 					},
 					"filetype",
+					{
+						function()
+							return os.date("%H:%M:%S")
+						end,
+						icon = "",
+					},
 				},
 
 				lualine_y = {},
