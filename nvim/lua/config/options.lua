@@ -12,7 +12,7 @@ opt.showmode = false
 opt.termguicolors = true
 opt.confirm = true
 
--- status_bar
+-- disable default status_bar
 opt.laststatus = 0
 
 -- search
