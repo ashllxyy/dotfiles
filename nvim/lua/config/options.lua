@@ -12,6 +12,9 @@ opt.showmode = false
 opt.termguicolors = true
 opt.confirm = true
 
+-- status_bar
+opt.laststatus = 0
+
 -- search
 opt.ignorecase = true
 opt.smartcase = true
@@ -36,10 +39,27 @@ vim.g.loaded_netrwPlugin = 1
 
 -- diagnostic options
 vim.diagnostic.config({
-	virtual_text = true,
-	signs = true,
+	virtual_text = {
+		prefix = "●",
+		spacing = 2,
+	},
+
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = " ",
+			[vim.diagnostic.severity.WARN] = " ",
+			[vim.diagnostic.severity.INFO] = " ",
+			[vim.diagnostic.severity.HINT] = "󰌵 ",
+		},
+	},
+
 	underline = true,
-	update_in_insert = true,
+	update_in_insert = false,
+	severity_sort = true,
+	float = {
+		border = "rounded",
+		source = "always",
+	},
 })
 
 -- Auto-refresh buffers when files change externally
