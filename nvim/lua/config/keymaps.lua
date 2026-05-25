@@ -22,3 +22,17 @@ vim.keymap.set("n", "<a-k>", "<cmd>m .-2<cr>==")
 -- move selected block in visual mode
 vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", { silent = true })
 vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", { silent = true })
+
+-- Duplicate current line / selected block up or down
+
+-- Duplicate current line down
+vim.keymap.set("n", "<A-S-J>", ":t.<CR>==", { silent = true })
+
+-- Duplicate selected block down
+vim.keymap.set("v", "<A-S-J>", ":t'><CR>gv=gv", { silent = true })
+
+-- Duplicate current line up
+vim.keymap.set("n", "<A-S-K>", ":t.-1<CR>==", { silent = true })
+
+-- Duplicate selected block up
+vim.keymap.set("v", "<A-S-K>", ":t'<-1<CR>gv=gv", { silent = true })

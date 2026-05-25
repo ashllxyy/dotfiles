@@ -4,29 +4,17 @@ local mux = wezterm.mux
 
 local config = {}
 
--- ====================================
--- Font
--- ====================================
+config.default_prog = { "powershell.exe" }
 
 config.font = wezterm.font("JetBrainsMonoNL Nerd Font")
-config.font_size = 12
+config.font_size = 9
 
--- ====================================
--- Window Appearance
--- ====================================
-
-config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
-
--- ====================================
--- Keybindings
--- ====================================
+config.window_background_opacity = 0.9
+config.win32_system_backdrop = "Acrylic"
 
 config.keys = {
-	-- =========================
 	-- Pane Navigation
-	-- =========================
-
 	{
 		key = "h",
 		mods = "CTRL",
@@ -50,12 +38,7 @@ config.keys = {
 		mods = "CTRL",
 		action = act.ActivatePaneDirection("Right"),
 	},
-
-	-- =========================
 	-- Split Panes
-	-- =========================
-
-	-- Vertical split (left/right)
 	{
 		key = "\\",
 		mods = "ALT",
@@ -63,8 +46,6 @@ config.keys = {
 			domain = "CurrentPaneDomain",
 		}),
 	},
-
-	-- Horizontal split (top/bottom)
 	{
 		key = "-",
 		mods = "ALT",
@@ -72,11 +53,7 @@ config.keys = {
 			domain = "CurrentPaneDomain",
 		}),
 	},
-
-	-- =========================
 	-- Close Pane
-	-- =========================
-
 	{
 		key = "x",
 		mods = "ALT",
@@ -84,49 +61,39 @@ config.keys = {
 			confirm = false,
 		}),
 	},
-
-	-- =========================
 	-- Maximize / Restore Pane
-	-- =========================
-
 	{
 		key = "f",
 		mods = "ALT",
 		action = act.TogglePaneZoomState,
 	},
-
-	-- =========================
 	-- Resize Panes
-	-- =========================
-
 	{
 		key = "H",
-		mods = "ALT|SHIFT",
+		mods = "CTRL|SHIFT",
 		action = act.AdjustPaneSize({ "Left", 5 }),
 	},
 
 	{
 		key = "J",
-		mods = "ALT|SHIFT",
+		mods = "CTRL|SHIFT",
 		action = act.AdjustPaneSize({ "Down", 5 }),
 	},
 
 	{
 		key = "K",
-		mods = "ALT|SHIFT",
+		mods = "CTRL|SHIFT",
 		action = act.AdjustPaneSize({ "Up", 5 }),
 	},
 
 	{
 		key = "L",
-		mods = "ALT|SHIFT",
+		mods = "CTRL|SHIFT",
 		action = act.AdjustPaneSize({ "Right", 5 }),
 	},
 
-	-- =========================
+	-- Custom Commands
 	-- Launch CP Workspace
-	-- =========================
-
 	{
 		key = "a",
 		mods = "ALT",
@@ -160,5 +127,10 @@ config.keys = {
 		end),
 	},
 }
+
+wezterm.on("gui-startup", function()
+	local tab, pane, window = mux.spawn_window({})
+	window:gui_window():toggle_fullscreen()
+end)
 
 return config
