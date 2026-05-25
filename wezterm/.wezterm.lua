@@ -100,7 +100,7 @@ config.keys = {
 		action = wezterm.action_callback(function()
 			local tab, pane, window = mux.spawn_window({
 				workspace = "cp",
-				cwd = "C:/ashllxyy/Programming/CP",
+				cwd = "C:/ashllxyy/Programming/competitive_programming",
 			})
 
 			-- Left pane -> code.cpp
