@@ -17,7 +17,7 @@ hl.monitor({
 
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "wofi --show drun"
+local menu        = "pkill -x wofi || wofi --show drun"
 
 
 -------------------
@@ -26,6 +26,7 @@ local menu        = "wofi --show drun"
 
 hl.on("hyprland.start", function()
   hl.exec_cmd("hyprpaper")
+  hl.exec_cmd("waybar")
 end)
 
 
@@ -33,8 +34,8 @@ end)
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
 
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XCURSOR_SIZE", "10")
+hl.env("HYPRCURSOR_SIZE", "10")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -63,8 +64,8 @@ hl.env("HYPRCURSOR_SIZE", "24")
 hl.config({
   general = {
     gaps_in          = 2,
-    gaps_out         = 5,
-    border_size      = 2,
+    gaps_out         = 7,
+    border_size      = 1,
     col              = {
       active_border   = "rgb(ffffff)",
       inactive_border = "rgba(595959aa)",
@@ -74,26 +75,13 @@ hl.config({
     layout           = "dwindle",
   },
   cursor = {
-    inactive_timeout = 0.5,
+    inactive_timeout = 0.1,
   },
   decoration = {
     rounding         = 2,
     rounding_power   = 2,
-    -- Change transparency of focused and unfocused windows
     active_opacity   = 1.0,
     inactive_opacity = 1.0,
-    shadow           = {
-      enabled      = true,
-      range        = 4,
-      render_power = 3,
-      color        = 0xee1a1a1a,
-    },
-    blur             = {
-      enabled  = true,
-      size     = 3,
-      passes   = 1,
-      vibrancy = 0.1696,
-    },
   },
   animations = {
     enabled = true,
@@ -126,9 +114,9 @@ hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQu
 hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
 hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 6.0, bezier = "default", style = "slide" })
+hl.animation({ leaf = "workspacesIn", enabled = true, speed = 6.0, bezier = "default", style = "slide" })
+hl.animation({ leaf = "workspacesOut", enabled = true, speed = 6.0, bezier = "default", style = "slide" })
 hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/

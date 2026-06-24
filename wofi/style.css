@@ -1,0 +1,46 @@
+window {
+    background: #000000;
+}
+
+#outer-box {
+    margin: 0;
+    padding: 12px;
+}
+
+#input {
+    background: #000000;
+    color: #ffffff;
+
+    border: 1px solid #333333;
+    border-radius: 0;
+
+    outline: none;
+    box-shadow: none;
+
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+#input:focus {
+    border: 1px solid #333333;
+    outline: none;
+    box-shadow: none;
+}
+
+#entry {
+    padding: 8px 10px;
+    border: 1px solid #333333;
+    margin-bottom: 4px;
+}
+
+#entry:selected {
+    background: #111111;
+}
+
+#text {
+    color: #aaaaaa;
+}
+
+#entry:selected #text {
+    color: #ffffff;
+}
