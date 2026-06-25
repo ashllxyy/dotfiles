@@ -63,16 +63,15 @@ hl.env("HYPRCURSOR_SIZE", "10")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
   general = {
-    gaps_in          = 2,
-    gaps_out         = 5,
-    border_size      = 2,
-    col              = {
+    gaps_in       = 2,
+    gaps_out      = 5,
+    border_size   = 2,
+    col           = {
       active_border   = "rgb(cccccc)",
       inactive_border = "rgb(333333)",
     },
-    resize_on_border = true,
-    allow_tearing    = false,
-    layout           = "dwindle",
+    allow_tearing = false,
+    layout        = "dwindle",
   },
   cursor = {
     inactive_timeout = 0.1,
