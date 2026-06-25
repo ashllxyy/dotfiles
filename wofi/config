@@ -1,7 +1,7 @@
 show=drun
 
 width=700
-height=40
+height=350
 
 prompt=
 hide_scroll=true
@@ -16,4 +16,5 @@ location=center
 
 exec_search=false
 
-term=kitty
+allow_markup=true
+gtk_dark=true

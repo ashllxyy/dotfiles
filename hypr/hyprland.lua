@@ -64,11 +64,11 @@ hl.env("HYPRCURSOR_SIZE", "10")
 hl.config({
   general = {
     gaps_in          = 2,
-    gaps_out         = 7,
-    border_size      = 1,
+    gaps_out         = 5,
+    border_size      = 2,
     col              = {
-      active_border   = "rgb(ffffff)",
-      inactive_border = "rgba(595959aa)",
+      active_border   = "rgb(cccccc)",
+      inactive_border = "rgb(333333)",
     },
     resize_on_border = true,
     allow_tearing    = false,
@@ -231,6 +231,11 @@ hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
 
+-- Swap windows with mainMod + CTRL + arrow keys
+hl.bind(mainMod .. " + CTRL + H", hl.dsp.window.swap({ direction = "left" }))
+hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.swap({ direction = "right" }))
+hl.bind(mainMod .. " + CTRL + K", hl.dsp.window.swap({ direction = "up" }))
+hl.bind(mainMod .. " + CTRL + J", hl.dsp.window.swap({ direction = "down" }))
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
