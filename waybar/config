@@ -1,18 +1,17 @@
 {
    "position": "top",
-    "height": 5, 
     "modules-left": ["hyprland/workspaces", "hyprland/submap", "custom/media"],
     "modules-center": ["hyprland/window"],
     "modules-right": [
       "pulseaudio",
       "network",
       // "backlight",
-      // "cpu",
-      // "memory",
-      // "battery",
-      // "battery#bat2",
-      // "clock",
-      "tray"
+      "cpu",
+      "memory",
+      "battery",
+      "battery#bat2",
+      "clock"
+      // "tray"
     ],
 
     "hyprland/mode": {
@@ -59,11 +58,11 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}% CPU",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% MEM"
     },
     "temperature": {
         "critical-threshold": 80,
@@ -80,16 +79,28 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% ",
-        "format-charging": "{capacity}%",
-        "format-plugged": "{capacity}%",
-        "format-alt": "{time} "
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time}",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interfac
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
@@ -97,16 +108,17 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        "format": "{volume}%  {format_source}",
+        "format": "{volume}%  {format_source}",
         "format-bluetooth": "{volume}%  {format_source}",
         "format-bluetooth-muted": " {format_source}",
-        "format-muted": " {format_source}",
+        "format-muted": "{volume}% 󰝟 {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "on-click": "pavucontrol"
     },
     "custom/media": {
         "exec": "~/.config/waybar/scripts/media_player.sh",
+        "on-click": "playerctl play-pause",
         "max-length": 60,
         "escape": true
     }
