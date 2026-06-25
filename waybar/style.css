@@ -8,8 +8,14 @@
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgb(0, 0, 0);
   color: #ffffff;
+}
+
+#workspaces button:hover {
+    background: transparent;
+    color: #757575;
+    box-shadow: none;
 }
 
 #workspaces button {
