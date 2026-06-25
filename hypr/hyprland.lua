@@ -236,6 +236,7 @@ hl.bind(mainMod .. " + CTRL + H", hl.dsp.window.swap({ direction = "left" }))
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.swap({ direction = "right" }))
 hl.bind(mainMod .. " + CTRL + K", hl.dsp.window.swap({ direction = "up" }))
 hl.bind(mainMod .. " + CTRL + J", hl.dsp.window.swap({ direction = "down" }))
+
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do

@@ -1,18 +1,18 @@
 {
    "position": "top",
     "height": 5, 
-    "modules-left": ["hyprland/workspaces", "hyprland/mode", "custom/media"],
+    "modules-left": ["hyprland/workspaces", "hyprland/submap", "custom/media"],
     "modules-center": ["hyprland/window"],
     "modules-right": [
       "pulseaudio",
-      "network"
+      "network",
       // "backlight",
       // "cpu",
       // "memory",
       // "battery",
       // "battery#bat2",
       // "clock",
-      // "tray"
+      "tray"
     ],
 
     "hyprland/mode": {
@@ -66,15 +66,13 @@
         "format": "{}% "
     },
     "temperature": {
-        "thermal-zone": 0,
         "critical-threshold": 80,
-        "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
     "backlight": {
         "format": "{percent}% ",
-        "format-icons": ["", ""]
+        "format-icons": ["-", "+"]
     },
     "battery": {
         "states": {
@@ -91,7 +89,7 @@
         "bat": "BAT2"
     },
     "network": {
-        "interface": "wlp2*", // (Optional) To force the use of this interfac
+        // "interface": "wlp2*", // (Optional) To force the use of this interfac
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
@@ -108,11 +106,8 @@
         "on-click": "pavucontrol"
     },
     "custom/media": {
-        "format": " {}",
-        "return-type": "json",
-        "max-length": 40,
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "exec": "~/.config/waybar/scripts/media_player.sh",
+        "max-length": 60,
+        "escape": true
     }
 }
