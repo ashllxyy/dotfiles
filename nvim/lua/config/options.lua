@@ -30,7 +30,7 @@ opt.softtabstop = 2
 
 -- clipboard
 vim.schedule(function()
-	opt.clipboard = "unnamedplus"
+  opt.clipboard = "unnamedplus"
 end)
 
 -- disable netrw
@@ -39,27 +39,27 @@ vim.g.loaded_netrwPlugin = 1
 
 -- diagnostic options
 vim.diagnostic.config({
-	virtual_text = {
-		prefix = "●",
-		spacing = 2,
-	},
+  virtual_text = {
+    prefix = "●",
+    spacing = 2,
+  },
 
-	signs = {
-		text = {
-			[vim.diagnostic.severity.ERROR] = " ",
-			[vim.diagnostic.severity.WARN] = " ",
-			[vim.diagnostic.severity.INFO] = " ",
-			[vim.diagnostic.severity.HINT] = "󰌵 ",
-		},
-	},
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = " ",
+      [vim.diagnostic.severity.WARN] = " ",
+      [vim.diagnostic.severity.INFO] = " ",
+      [vim.diagnostic.severity.HINT] = "󰌵 ",
+    },
+  },
 
-	underline = true,
-	update_in_insert = false,
-	severity_sort = true,
-	float = {
-		border = "rounded",
-		source = "always",
-	},
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+  float = {
+    border = "rounded",
+    source = "always",
+  },
 })
 
 -- Auto-refresh buffers when files change externally
