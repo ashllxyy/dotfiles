@@ -1,0 +1,42 @@
+format = """
+$directory\
+$git_branch\
+$git_status\
+\n$character"""
+
+right_format = """$cmd_duration"""
+
+add_newline = false
+
+[character]
+success_symbol = "[›](bold 244) "
+error_symbol = "[»](bold 238) "
+
+[directory]
+style = "bold 255"
+truncation_length = 4
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = "‡ "
+style = "italic 248" 
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+style = "bold 246"
+format = "[([$all_status$ahead_behind]($style))]($style) "
+conflicted = "="
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[cmd_duration]
+min_time = 2_000
+style = "240"
+format = "took [$duration]($style)"
