@@ -253,7 +253,7 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:mag
 -- Screenshot with mainMod + SHIFT + S using grim + slurp and copy it directly to clipboard using wl-clipboard
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
 
--- Laptop multimedia keys for volume and LCD brightness
+-- Laptop multimedia keys for volume and LCD brightness, requires wpctl for volume, and brightnessctl for brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
   { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
@@ -268,6 +268,10 @@ hl.bind(mainMod .. " + XF86AudioRaiseVolume", hl.dsp.exec_cmd("brightnessctl -e4
   { locked = true, repeating = true })
 hl.bind(mainMod .. " + XF86AudioLowerVolume", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),
   { locked = true, repeating = true })
+
+-- wofi powermenu
+hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("~/.config/wofi/scripts/powermenu/powermenu.sh"),
+  { locked = false, repeating = false })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
