@@ -4,8 +4,8 @@
     "modules-center": ["hyprland/window"],
     "modules-right": [
       "pulseaudio",
+      "backlight",
       "network",
-      // "backlight",
       "cpu",
       "memory",
       "battery",
@@ -70,8 +70,8 @@
         "format-icons": ["", "", ""]
     },
     "backlight": {
-        "format": "{percent}% ",
-        "format-icons": ["-", "+"]
+        "format": "{percent}% {icon}",
+        "format-icons": [""]
     },
     "battery": {
         "states": {
