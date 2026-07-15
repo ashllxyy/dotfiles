@@ -54,8 +54,19 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%I:%M }",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%H:%M / %d-%m-%Y}",
+        "tooltip-format": "{calendar}",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "format": {
+                "months": "{}",
+                "days": "{}",
+                "weekdays": "{}",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            }
+        }
     },
     "cpu": {
         "format": "{usage}% CPU",
@@ -71,7 +82,8 @@
     },
     "backlight": {
         "format": "{percent}% {icon}",
-        "format-icons": [""]
+        "format-icons": [""],
+        "tooltip": false
     },
     "battery": {
         "states": {
@@ -101,11 +113,10 @@
         "bat": "BAT2"
     },
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "{signalStrength}%  ",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format": "Connected to: {essid}\nIP: {ipaddr}",
+        "format-alt": ""
     },
     "pulseaudio": {
         "format": "{volume}%  {format_source}",
