@@ -25,8 +25,11 @@ local menu        = "pkill -x wofi || wofi --show drun"
 -------------------
 
 hl.on("hyprland.start", function()
+  hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
+
   hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
   hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'")
+
   hl.exec_cmd("hyprpaper")
   hl.exec_cmd("waybar")
   hl.exec_cmd("brave --no-startup-window")
