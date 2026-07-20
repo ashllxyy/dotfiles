@@ -2,6 +2,7 @@ format = """
 $directory\
 $git_branch\
 $git_status\
+$python\
 \n$character"""
 
 right_format = """$cmd_duration"""
@@ -35,6 +36,10 @@ modified = "!"
 staged = "+"
 renamed = "»"
 deleted = "✘"
+
+[python]
+format = "is [($virtualenv)]($style) "
+style = "bold 244"
 
 [cmd_duration]
 min_time = 2_000
