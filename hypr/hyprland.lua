@@ -2,7 +2,6 @@
 ---- MONITORS ----
 ------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
   output   = "eDP-1",
   mode     = "1920x1080",
@@ -33,6 +32,8 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("hyprpaper")
   hl.exec_cmd("waybar")
   hl.exec_cmd("brave --no-startup-window")
+
+  hl.exec_cmd("batsignal -w 50 -c 20 -d 10 -p")
 end)
 
 
